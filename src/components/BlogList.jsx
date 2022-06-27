@@ -1,5 +1,5 @@
 import Data from '../data.json';
-// import {FaRegTrashAlt} from 'react-icons/fa';
+import {FaRegTrashAlt} from 'react-icons/fa';
 
 const BlogList = (handleDeleteBlog) => {
     return (
@@ -21,7 +21,7 @@ const BlogList = (handleDeleteBlog) => {
                             </div>
                         </div>
                         <div className="footer">
-                            <button onClick={handleDeleteBlog}></button>
+                            <button onClick={handleDeleteBlog}><FaRegTrashAlt/></button>
                         </div>
                     </div>
                 );
