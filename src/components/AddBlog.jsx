@@ -1,41 +1,61 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
-function AddBlog(handleAddBlog) {
-    const initialValues = { 
-        title: '',
-        author: '',
-        text: ''
-    };
+function AddBlog() {
+    const [title, setTitle] = useState('');
+    const [author, setAuthor] = useState();
+    const [text, setText] = useState('');
+    const [isPending, setIsPending] = useState(false);
+    const redirect = useNavigate();
 
-    const [blogText, setBlogText] = useState(initialValues);
+    const handleSumbit = (e) => {
+        e.preventDefault();
+        const blog = {title, author, text};
 
-    const handleChange = event => {
-    /*with typing the character limit will change with the input text's length*/
-        setBlogText( prevValues => {
-            return {...prevValues, [event.target.name]: event.target.value}
-        })
-    };
-    
-    const handleSaveClick =() => {
-    /*if there's no character in input, then we will not save the blog*/
-        if(blogText.trim().length > 0){
-            handleAddBlog(blogText);
-            setBlogText('');
-        } 
+        setIsPending(true);
+
+        fetch('http://localhost:8000/blogs', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(blog)
+        }).then (() => {
+            setIsPending(false)
+            console.log("New Blog Added");
+            redirect('/');
+        }) 
     };
 
     return (
-        <div className="blog new">
-            <form>
-            {/*the text area for our input*/}
+        <div className="create">
+            <form onSubmit={handleSumbit}>
                 <label>Title:</label>
-                    <input type="text" name="title" value={blogText.title} onChange={handleChange}/><br></br>
+                <input 
+                    type="text" 
+                    required
+                    name="title" 
+                    value={title} 
+                    onChange={(e) => setTitle(e.target.value)}
+                /><br></br>
                 <label>Author:</label>
-                    <input type="text" name="author" value={blogText.author} onChange={handleChange}/>
-                <textarea type="text" name="text" rows="4" className="textarea" value={blogText.text} onChange={handleChange}></textarea>
-                <div className="blog-footer">
-                    <input type="submit" value="Submit" onClick={handleSaveClick}></input>
-                </div>
+                    <select
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
+                    >
+                        <option value=""></option>
+                        <option value="Mario">Mario</option>
+                        <option value="Josh">Josh</option>
+                        <option value="Justas">Justas</option>
+                    </select>
+                <label>Blog text:</label>
+                <textarea 
+                    type="text" 
+                    name="text" 
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    >
+                </textarea>
+                {!isPending && <button>Add Blog</button>}
+                {isPending && <button disabled>Adding Blog...</button>}
             </form>
 
         </div>
