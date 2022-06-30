@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 
-const BlogList = ({ blogs, catTitle }) => {   // <--- alternative
-    // const blogs = props.blogs;             //      props.blogs
-    // const catTitle = props.catTitle;       //      props.catTitle
-    
+const BlogList = ({ blogs, catTitle }) => {  // <-- Alternative - const blogs = props.blogs; AND const catTitle = props.catTitle; From Blog.jsx
     return (
         <div className="blog-list">
             <h2>{catTitle}</h2>
-            {blogs.map((blog) => (
+            {/* map() method used to traverse and display a list of similar objects of a component */}
+            {blogs.map((blog) => ( 
             <div className="blog-preview" key={blog.id}>
                 <Link to={`/blogs/${blog.id}`}>
                     <div className="header">
@@ -19,7 +17,6 @@ const BlogList = ({ blogs, catTitle }) => {   // <--- alternative
                         </div>
                     </div>
                 </Link>
-
             </div>
             ))}
         </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+// Custom Hook for fetching blogs from db.json file
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
@@ -14,7 +14,7 @@ const useFetch = (url) => {
             return res.json();
         })
         .then(data => {
-            setData(data);         //prints data
+            setData(data);          //prints data
             setIsPending(false);    //removes Loading... text if data is fetched
             setError(null);         //removes error message if data is fetched
         })

@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import useFetch from "./useFetch";
 
 const BlogDetails = () => {
-    const {id} = useParams()
-    const {data: blog, error, isPending} = useFetch('http://localhost:8000/blogs/' + id);
+    const { id } = useParams()
+    const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
     const redirect = useNavigate();
 
+    /*this is for deleting the blog using each blog's unique id as parameter
+    so we have passed handleDelete function as it's onClick event*/
     const handleDelete = () => {
         fetch('http://localhost:8000/blogs/' + blog.id, {
             method: 'DELETE'
@@ -27,7 +29,6 @@ const BlogDetails = () => {
                     <button onClick={handleDelete}>Delete</button>
                 </article>
             )}
-
         </div>
      );
 }

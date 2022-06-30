@@ -41,7 +41,6 @@
     margin: 25px 0;
     border: 1px solid rgba(255, 200, 200, 0.342);
     border-radius: 5px;
-
 }
 .blog-preview:hover {
     box-shadow: 1px 3px 5px rgba(255, 200, 200, 0.377);
@@ -113,23 +112,12 @@
 .body {
     padding: 10px;
 }
-.footer {
-    height: 20px;
-    border-top: 1px solid #ffedf2;
-}
-.footer button {
-    padding: 10px;
-    background-color: transparent;
-    border: transparent;
-    cursor: pointer;
-    float: right;
-}
 .textarea {
     border: 1px solid #ccc;
     font-family: inherit;
     font-size: inherit;
     padding: 1px 6px;
-  }
+}
 .textarea {
     display: block;
     width: 100%;
@@ -138,18 +126,25 @@
     min-height: 40px;
     line-height: 20px;
 }
-/* Search */
-.search{
-    float: right;
-    align-items: center;
-    border-radius: 10px;
+
+/* Footer */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
     padding: 5px;
-    margin-bottom: 1px;
-    border: 1px solid rgba(255, 200, 200, 0.342);
+    vertical-align:top;
+    background: rgba(51, 47, 88, 0.199);
 }
-.search input{
-    border: none;
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
 }
-.search input:focus{
-    outline: none;
+.footer img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
