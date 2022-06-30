@@ -4,7 +4,8 @@
 * {
     margin: 0;
     font-family: "Quicksand";
-    color: #333;
+    color: white;
+    background: rgb(51, 47, 88);
 }
 .navbar {
     padding: 20px;
@@ -12,10 +13,10 @@
     align-items: center;
     max-width: 600px;
     margin: 0 auto;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid rgb(245, 65, 65);
 }
 .navbar h1 {
-    color: #f1356d;
+    color: rgb(245, 65, 65);
 }
 .navbar .links {
     margin-left: auto;
@@ -26,7 +27,7 @@
     padding: 6px;
 }
 .navbar a:hover {
-    color: #f1356d;
+    color: rgb(245, 65, 65);
 }
 .content {
     max-width: 600px;
@@ -36,27 +37,28 @@
 
 /* blog previews / list */
 .blog-preview {
-    padding: 10px 16px;
-    margin: 20px 0;
-    border: 1px solid #dfdede;
+    padding: 20px 16px;
+    margin: 25px 0;
+    border: 1px solid rgba(255, 200, 200, 0.342);
+    border-radius: 5px;
 
 }
 .blog-preview:hover {
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    box-shadow: 1px 3px 5px rgba(255, 200, 200, 0.377);
 }
-.blog-preview h2 {
+.blog-list h2 {
     font-size: 20px;
-    color: #f1356d;
+    color: rgb(245, 65, 65);
     margin-bottom: 8px;
 }
-.blog-preview a{
+.blog-list a{
     text-decoration: none;
 }
 
 /* blog details page */
 .blog-details h2 {
     font-size: 20px;
-    color: #f1356d;
+    color: rgb(245, 65, 65);
     margin-bottom: 10px;
 }
 .blog-details div {
@@ -66,7 +68,7 @@
     font-style: italic;
 }
 .blog-details button {
-    background: #f1356d;
+    background: rgb(245, 65, 65);
     color: #fff;
     border: 0;
     padding: 8px;
@@ -86,7 +88,7 @@
 }
 .create h2 {
     font-size: 20px;
-    color: #f1356d;
+    color: rgb(245, 65, 65);
     margin-bottom: 30px;
 }
 .create input, .create textarea, .create select {
@@ -96,9 +98,10 @@
     border: 1px solid #ddd;
     box-sizing: border-box;
     display: block;
+    border-radius: 5px;
 }
 .create button {
-    background: #f1356d;
+    background: rgb(245, 65, 65);
     color: #fff;
     border: 0;
     padding: 8px;
@@ -134,4 +137,19 @@
     resize: both;
     min-height: 40px;
     line-height: 20px;
+}
+/* Search */
+.search{
+    float: right;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 1px;
+    border: 1px solid rgba(255, 200, 200, 0.342);
+}
+.search input{
+    border: none;
+}
+.search input:focus{
+    outline: none;
 }

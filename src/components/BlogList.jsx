@@ -20,9 +20,6 @@ const BlogList = ({ blogs, catTitle }) => {   // <--- alternative
                     </div>
                 </Link>
 
-                <div className="footer">
-
-                </div>
             </div>
             ))}
         </div>

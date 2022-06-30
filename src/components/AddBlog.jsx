@@ -31,8 +31,8 @@ function AddBlog() {
                 <label>Title:</label>
                 <input 
                     type="text" 
-                    required
                     name="title" 
+                    required
                     value={title} 
                     onChange={(e) => setTitle(e.target.value)}
                 /><br></br>
@@ -42,7 +42,7 @@ function AddBlog() {
                         onChange={(e) => setAuthor(e.target.value)}
                     >
                         <option value=""></option>
-                        <option value="Mario">Mario</option>
+                        <option value="Bob">Bob</option>
                         <option value="Josh">Josh</option>
                         <option value="Justas">Justas</option>
                     </select>
@@ -50,6 +50,7 @@ function AddBlog() {
                 <textarea 
                     type="text" 
                     name="text" 
+                    required
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     >

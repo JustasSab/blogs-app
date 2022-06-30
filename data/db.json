@@ -2,8 +2,8 @@
   "blogs": [
     {
       "id": 1,
-      "title": "My new website",
-      "author": "Mario",
+      "title": "My first Blog",
+      "author": "Bob",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     {
@@ -25,9 +25,9 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     {
-      "title": "New Test Blog",
+      "title": "Test blog",
       "author": "Justas",
-      "text": "Helloooo",
+      "text": "Lailai",
       "id": 5
     }
   ]
